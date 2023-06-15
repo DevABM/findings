@@ -14,7 +14,3 @@ Voice.
 Creating a UI Style Guide for Better UX | Toptal®
 UI Style Guides are a design and development tool that brings cohesion to a digital product's user interface and experience. At their core, they: Record all of the design elements and interactions that occur within a product. List crucial UI components such as buttons, typography, color, navigation menus, etc.
 
-## What is style guide in UI design?
-Creating a UI Style Guide for Better UX | Toptal®
-UI Style Guides are a design and development tool that brings cohesion to a digital product's user interface and experience. At their core, they: Record all of the design elements and interactions that occur within a product. List crucial UI components such as buttons, typography, color, navigation menus, etc.
-
