@@ -1,0 +1,230 @@
+Okay, hello, Cloud Gurus,
+and welcome to this lecture.
+In this lecture, we're going to look
+at how you can take your data global
+using DynamoDB streams and global tables.
+So we'll start by exploring what DynamoDB streams are.
+We'll then look at global tables.
+I'll then go in and set this up in the console.
+So we will set up a DynamoDB table in one region,
+turn on global tables,
+and stream that DynamoDB table to another region,
+and then we'll move on to my exam tips.
+So let's start with streams.
+What are DynamoDB streams?
+Well, they're basically time-ordered sequence
+of item-level changes in a table.
+So you can think of it
+as basically first-in, first-out streams of your data.
+So every time your data changes,
+it comes with a sequence number
+and it's completely sequenced.
+And these sequences are stored
+in what we call DynamoDB streams,
+and they're actually stored for 24 hours.
+Now your data or the sequences are broken up into shards.
+So shard is just a bunch of data
+that has sequential sequence numbers.
+So every time you make a change to a DynamoDB table,
+that data is going to be stored sequentially
+in a stream record, which is broken up into shards.
+And changes are just things
+like inserts, updates, and deletes.
+Every time you insert a record
+or update a record or delete a record,
+that's going to give you a FIFO time sequence.
+Those changes are stored in a DynamoDB stream,
+and to make it manageable,
+we just basically split those sequences up into shards.
+And you can actually combine it
+with Lambda functions for functionality,
+like stored procedures in traditional databases.
+And we will cover off what Lambda is later on in the course,
+but essentially if you've ever done anything
+like with SQL Server or MySQL
+where you've got stored procedures in your database engine,
+you can add that kind of functionality to DynamoDB.
+You do that using Lambda.
+But don't worry, that's not an exam topic,
+it's just something really cool
+that you can do with DynamoDB.
+And we will cover off what Lambda is later on in the course.
+So now that you know what stream records are,
+we'll move on to what global tables are.
+And these are basically managed
+multi-master, multi-region replications.
+So it's a way of replicating your DynamoDB tables
+from one region to another.
+And this is great for globally distributed applications.
+So if you've got an application
+that's spread all across the world
+and you want to have consistent DynamoDB tables
+in each region, then you can have global tables.
+And the technology that drives this
+is just basically DynamoDB streams.
+So it's based on DynamoDB streams,
+and you'll need DynamoDB streams turned on
+in order to enable this.
+Basically, it gives you multi-region redundancy
+for disaster recovery or high availability.
+And the cool thing about this
+is it's built into DynamoDB natively.
+You don't have to rewrite your applications.
+You can just go into the console and turn it on.
+And the replication latency is under one second
+in most cases, which is just crazy if you think about it.
+So you can have your DynamoDB table updating
+on the East Coast and then have that replication
+go across to the West Coast of the US, let's say,
+and that latency can be under one second.
+Sometimes it could be longer if you're doing something
+like let's say Australia to London,
+but it is really, really fast in terms of latency.
+So the best way to learn this is to go in
+and have a look at how this works in the AWS Console.
+Okay, so here I am in the AWS Console.
+I'm going to go over to Services.
+I'm going to go down to Database,
+and I'm going to go into DynamoDB.
+Now, if you've never created a DynamoDB table before,
+you'll see the following splash screen.
+So we're going to go ahead and hit Create Table.
+So in here, we're going to enter our table name.
+So I'm just going to call it mydynamodb and then table 1.
+And then in here is our partition key.
+So this is our unique key for our table.
+And it could be things like your student ID
+or your social security number or your user ID, etc.
+So I'm going to use user_id in here.
+I'm going to leave everything else as the default settings.
+I'm going to go scroll down and hit Create Table.
+So that is now creating my table.
+Now, you'll see here,
+my table's being created in Northern Virginia.
+So this is a regional base service,
+and we can see here that it is now creating the table.
+So I'm going to pause the video
+and wait for this to come back up
+and we can now see that it is active.
+So if we go in and click in our table,
+we'll be able to see all our table properties in here.
+And we can actually go ahead
+and click on Explore Table Items.
+So this will show us what's in our table.
+Now, obviously we only just created this table
+so there's nothing in there.
+Let's go ahead and create an item,
+and you can do this either in the terms of a form,
+or you can do it using JSON.
+I'm going to do it using a form, just to make it a lot
+easier. So we're just going to enter a random number here
+for our user ID and hit Create Item.
+So this has now created a user ID of 345453.
+And if we click in here, we can then go
+and start adding attributes to our user.
+So we could have things in strings.
+So we could do First_Name, something like that.
+So Ryan, and then we can add a new attribute.
+So string, Surname, and then Kroonenburg.
+And then we can do something like our age, for example,
+so just add in a number.
+So age, I'll do 39.
+So let's go ahead and hit Save Changes.
+And that will now add these items into our user ID.
+And we'll be able to click in here
+and see all these different attributes.
+So that is pretty easy to do.
+So obviously, when you are accessing
+DynamoDB programmatically,
+maybe you're using Python or something,
+you'll be able to insert all the different objects,
+all the different data that you want into your table.
+So we can see in here that we've got this item.
+Let's go back to DynamoDB,
+and we'll click on Tables.
+And so what we want to do is,
+let's go over to London.
+Europe, London, which is where I'm recording this right now.
+We can see that there's no tables in here.
+So what I want to do is I want to take my tables global.
+So I want to start creating replicas of my table.
+So the way we do that is we can click in here,
+and just click on our table.
+And then we can go over to Global Tables,
+and we can see here
+that we don't have any replicas to other regions.
+So all we need to do is go ahead and hit Create Replica.
+That will then create a replica,
+and we can choose what region we want it to.
+So I'm going to start replicating out our table
+to the London region in Europe.
+I'm going to go ahead and hit Create Replica.
+And it really is that simple.
+Now this will take about 5 minutes to create a replica,
+so I'm just going to pause the video here.
+Okay, so I'm just going to refresh the screen
+and hopefully the status will change.
+And there we go, we can see it is now active.
+So if I click in here,
+and if I go over and explore my table items,
+we can see my user ID is in here,
+and we can see all these different attributes
+are already there.
+If we go back over to our tables
+and we change the region back to US East,
+Northern Virginia, we click in our DynamoDB table,
+and go explore our table items,
+and let's go ahead and create an item.
+I'm going to do another random number,
+and then I'm going to add some new attributes.
+So this one I'm going to do First_Name, and then John.
+And then I'm going to add a new attribute in string.
+I'm just going to do Surname,
+and then just type in Smith in here.
+Because this is a non relational database,
+I don't need to have things like age.
+I can create as many different items as I want,
+or as many different attributes as I want.
+So let's go ahead and hit Create Item.
+That has now created our item,
+and you can see it down here, John Smith.
+Let's see how fast it replicates those.
+So let's go over to our other regions.
+So it was Europe, London, US, too.
+And we can see that it's already been replicated
+from one side of the world to the other.
+Now just to undo all this, all you need to do is go in
+and then delete your replica table.
+You just type in delete in here,
+and that will go ahead and delete it.
+It can take a couple of minutes.
+Once it's deleted,
+then you'll be able to go back to Northern Virginia,
+and you'll be able to delete your primary table as well.
+So let's go on to my exam tips.
+So on to my exam tips.
+So just remember, going into your exam
+that DynamoDB global tables gives you
+multi-master, multi-region replication.
+This is great if your applications are all over the world
+because they can connect into other DynamoDB tables.
+It's based on DynamoDB streams.
+So this is going to be a very popular exam topic.
+You might need to be turning on global tables
+and it won't work.
+What could be causing this?
+Well, you need to enable DynamoDB streams.
+DynamoDB global tables gives you multi-region redundancy
+for disaster recovery or higher availability.
+You don't have to rewrite your application.
+It's all built into DynamoDB natively, as we saw.
+And the replication latency is under one second.
+That replication we saw when we created our new item,
+by the time we went over to London, it was already there.
+So that is it for this lecture, everyone.
+You've done really, really well.
+We're ready to move on and review everything
+we've learned in the databases section of our course.
+And then we're ready to move on to our next section.
+So if you've got the time,
+please join me in the next lecture, thank you.
