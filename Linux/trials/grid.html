@@ -1,19 +1,66 @@
 <html>
+    <head>
     <style>
-        .container { 
-            display: flex; 
-            justify-content: space-between; 
-                    } 
-        .left { 
-            background-color: #dc4d4d; 
-              } 
-        .center { 
-            background-color: yellow; 
-                } 
-        .right { 
-            background-color: #e8a2af; 
-                }
+        .container {
+            border: 2px solid #656363;
+            padding: 5px;
+            margin: 5px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, auto);
+            grid-gap: 8px;
+            grid-template-areas: 
+              "t . f"
+              "t s s"
+              "t s s";
+          }
+          
+          
+          .left {
+            background-color: #dc4d4d;
+            grid-area: f;
+          }
+          
+          .center {
+            background-color: #FD9A5C;
+            grid-area: s;
+          }
+          
+          .right {
+            background-color: #e8a2af;
+            grid-area: t;
+          }
+          
+          nav {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: #5ca966;
+          }
+          
+          footer {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: #2795ee;
+          }
+          
+          section {
+            height: 100px;
+            line-height: 100px;
+          }
+          
+          * {
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 4px;
+          }
     </style>
+</head>
 <body>
     <nav>Navbar</nav> 
     <main class="container"> 
