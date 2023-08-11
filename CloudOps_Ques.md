@@ -192,4 +192,4 @@ How would you secure data in a cloud environment?
 
 There are a number of ways to secure data in a cloud environment, including:
 
-Using encryption: Encrypting
+
