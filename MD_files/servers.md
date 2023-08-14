@@ -55,3 +55,5 @@ Reverse proxies can be used for a variety of purposes, including:
 𝗦𝗦𝗟 𝘁𝗲𝗿𝗺𝗶𝗻𝗮𝘁𝗶𝗼𝗻: Reverse proxies can terminate SSL connections, which can improve security.
 
 𝗨𝗥𝗟 𝗿𝗲𝘄𝗿𝗶𝘁𝗶𝗻𝗴: Reverse proxies can rewrite URLs, which can be useful for redirecting traffic or for implementing content negotiation.
+
+thats all
