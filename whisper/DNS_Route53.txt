@@ -1,0 +1,43 @@
+[ [ ] As on Route 53, Amazon Route 53 is a highly available and scalable cloud domain name system that provides a reliable and cost effective way for developers and businesses to root end users to internet applications.
+
+This is achieved by translating names like www.
+
+example.
+
+com into numeric IP addresses like 192.
+
+0.
+
+2.
+
+1 that enable computers to connect to each other.
+
+Amazon Route 53 is also fully compliant with Internet Protocol version 6.
+
+Amazon Route 53 connects user requests to infrastructure running in AWS, such as Amazon S3 buckets or Amazon Elastic Load Balances, and can also be used to route users to infrastructure outside of AWS.
+
+Amazon Route 53 traffic flow simplifies traffic management globally through a variety of routing types including latency-based routing that routes users to the AWS region that provides the lowest possible latency.
+
+GODNS routing that routes users to a particular endpoint that you specify based on the end user's geographic location.
+
+Geo proximity routing that routes traffic to your resources based on the geographic location of your users and your resources.
+
+Weighted round robin routing that specifies the frequency with which different DNS responses are returned to end users and Failover routing that lets you root traffic to a resource when the resource is healthy or to a different resource when the first resource is unhealthy You can also use Amazon root 53 application recovery controller to configure DNS health checks that continuously monitor your applications ability to recover from failures and control application recovery 3.
+
+Amazon Route 53 has a simple web services interface that lets you get started in minutes.
+
+You start by creating an Amazon Route 53 hosted zone that can store DNS records for your domain.
+
+Once you create a hosted zone, you receive 4 Route 53 name servers to help ensure a high level of availability for your applications.
+
+If you don't have a domain name, you can create one with Route 53 or transfer an existing domain that you already own so you can conveniently manage your domain names and DNS configuration in a single location.
+
+Your hosted zone will be initially populated with a basic set of DNS records, including four virtual name servers that will enter queries for your domain.
+
+You can add, delete or change records in this set using the AWS Management Console or by calling the Change Resource Record Set API.
+
+Amazon Route 53 supports many DNS record types, including A records, but route traffic to a resource, such as a web server, and CNAME records that allow you to redirect one domain name to another.
+
+Route 53 also includes alias records that let you route traffic to selected AWS resources, like Amazon S3 and Amazon CloudFront.
+
+(buzzing) (buzzing) (silence) (buzzing) (buzzing) (buzzing) 
