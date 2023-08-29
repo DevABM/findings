@@ -49,3 +49,5 @@ Distributes incoming traffic based on transport layer protocols. TCP (Transmissi
 
 Uses machine learning and artificial intelligence to analyze current traffic in real-time and predictively adjust routing decisions based on traffic patterns, server health metrics, and other relevant data points.
 Activate to vie
+
+![Alt text](image.png)
