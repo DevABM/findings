@@ -1,0 +1,1 @@
+Template yaml is an AWS serverless application model template  that contains information about the AWS Lambda function and the related API in Amazon API gateway and any other supported AWS resources. Whenever you update the local version of your function and then upload it to Lambda, AWS cloud9 calls, AWS SAM to use this template file to perform the upload. 
