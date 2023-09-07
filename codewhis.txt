@@ -1,0 +1,14 @@
+# command to zip addObjects.py and test.py
+# zip -r addObjects.zip addObjects.py test.py
+
+# aws cli command to get iam role arn with the name LambdaDeploymentRole and query the role arn
+# aws iam get-role --role-name LambdaDeploymentRole | jq -r '.Role.Arn'
+
+
+# aws iam get-role --role-name LambdaDeploymentRole
+
+# aws cli command to upload lambda function addObjects.zip to console with runtime python3.100 and handler addObjects.lambda_handler
+# aws lambda create-function --function-name addObjects --runtime python3.10 --role 0000000000000000000000000:role/LambdaDeploymentRole --handler addObjects.lambda_handler --zip-file fileb://addObjects.zip
+
+# aws cli command to update the lambda function addObjects.zip to console with runtime python3.10 and handler addObjects.lambda_handler
+# aws lambda update-function-code --function-name addObjects --zip-file fileb://addObjects.zip
