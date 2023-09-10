@@ -12,3 +12,13 @@
 
 # aws cli command to update the lambda function addObjects.zip to console with runtime python3.10 and handler addObjects.lambda_handler
 # aws lambda update-function-code --function-name addObjects --zip-file fileb://addObjects.zip
+
+# command to zip addObjects.py and test.py
+
+# aws cli command to get iam role arn with the name LambdaDeploymentRole
+
+# aws iam get-role --role-name LambdaDeploymentRole
+
+# aws cli command to upload lambda function addObjects.zip to console with runtime python3.100 and handler addObjects.lambda_handler
+
+# aws cli command to update lambda function addObjects to enable versioning on the s3 bucket
