@@ -17,3 +17,6 @@ git commit -m "first commit"
 git remote add origin https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-app
 
 git push -u origin main
+
+-------------------------------------
+sudo pip3 install -r requirement.txt
