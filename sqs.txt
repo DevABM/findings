@@ -1,0 +1,10 @@
+In this practice lab you will:
+- Create an Amazon SQS queue.
+- Create Python Code to send a message to the Amazon SQS queue.
+- Configure a trigger to call an AWS Lambda function when messages are available in the queue.
+- Store messages in Amazon DynamoDB.
+- Simulate an error processing the message.
+
+Amazon Simple Queue Service (Amazon SQS0):
+    It is a fully managed message queuing solution that you can use to decouple and scale microservices, distributed systems, and serverless applications.
+    
