@@ -11,7 +11,7 @@
 # aws lambda create-function --function-name addObjects --runtime python3.10 --role 0000000000000000000000000:role/LambdaDeploymentRole --handler addObjects.lambda_handler --zip-file fileb://addObjects.zip
 
 # aws cli command to update the lambda function addObjects.zip to console with runtime python3.10 and handler addObjects.lambda_handler
-# aws lambda update-function-code --function-name addObjects --zip-file fileb://addObjects.zip
+# aws lambda update-function-code --function-name addObjects --zip-file file://addObjects.zip
 
 # command to zip addObjects.py and test.py
 
