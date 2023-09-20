@@ -20,7 +20,8 @@ What are the different types of storage available in cloud computing?
 
 What are the security concerns in cloud computing and how can they be addressed?
 
-## Answers Version 1:
+## Answers 
+##Version 1:
 
 What are the main differences between cloud architecture and standard architecture?
 
