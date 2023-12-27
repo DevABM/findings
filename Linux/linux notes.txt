@@ -1,0 +1,144 @@
+Package managers help you install various software on the Linux system, and when you go through DevOps
+
+and cloud courses, you will install various software such as Web servers, database servers and DevOps
+
+tools or dependent softwares.
+
+And most of these are installed using package managers.
+
+Santos uses an RPM based package manager just like RedHat Enterprise Linux or Fedora.
+
+RPM stands for Red Hat Package Manager.
+
+A software is packaged into a bundle with the extension RPM to install the package, use the RPM command
+
+and the IE option for install and specify the package name.
+
+To uninstall a package, use the dash E option and to query the database and get details about an installed
+
+package.
+
+Use the dash queue option.
+
+So RPM requires you to point it to the exact location where the RPM package is available.
+
+You then install that package on the system.
+
+It does not care about any dependencies that this package may have.
+
+For example, say you were installing another software like Ansible and it requires Python and other
+
+other dependent software.
+
+So simply installing ansible with the RPM command would not take care of installing python and other
+
+dependent libraries if they are not already installed.
+
+And that's why you need a solution that can make these easy for you.
+
+A single command that can query the package, find its location and install all dependencies as well
+
+as the package itself.
+
+That's where package managers like Yum come into play.
+
+Yum is a high level package manager that uses RPM underneath running a simple yum install, Ansible
+
+command installs ansible and all of its dependent packages.
+
+Yum.
+
+Searches software repositories that act as warehouses containing hundreds and thousands of RPM package
+
+files.
+
+These repositories can be local that is installed on your laptop, for example, or on a remote location,
+
+either a secure server in your enterprise or available publicly in the internet under the hood.
+
+Yum.
+
+Still makes use of the RPM package manager.
+
+So when you try to install a package using yum yum searches, these repositories finds the required
+
+packages and dependencies and installs all of them in the right order.
+
+So what is this remote repository and how are packages stored there?
+
+Like how does yum find where a particular package is located?
+
+The information about the repository in a configuration file at PATH slash etsy slash yum repos dot
+
+dd directory.
+
+Every operating system comes bundled with its own set of repositories from which you can install a lot
+
+of commonly used software and tools.
+
+So you might not need to edit the list of repositories, but at times the default set of repositories
+
+may not have the software you need or may not have the latest version of software that you need to install.
+
+So in that case, you will need to configure additional repositories so that you can find those packages.
+
+Instructions to configure additional repositories are usually made available along with the software
+
+itself, and we'll see an example of that.
+
+So to see the list of repositories available on a system, run the Yum Repo List command.
+
+And here we see that there are a set of CentOS repositories such as the base and extra repository as
+
+well as MongoDB and MySQL ones.
+
+So listing the files under the Etsy Repository directory shows the files where these repositories are
+
+configured.
+
+And if you look inside one of these files, you will see the URL of the location where all packages
+
+are stored.
+
+Now, if you visit this URL, you can see the RPM files that YUM will eventually download and install
+
+on your local system with the RPM utility.
+
+So that's kind of how Yum finds a package in this case since we are relying on an existing yum repo
+
+on CentOS.
+
+It takes us to an older version of Ansible, which happens to be version 2.4.
+
+Although the latest version as of this recording is 2.9.
+
+So as I just mentioned, the instructions to configure the repo to install the latest version of Ansible
+
+is available in the Ansible documentation page itself.
+
+So you can configure a new repo using the install command itself and running this command adds a new
+
+repository to your system, which points to the latest version of Ansible.
+
+To see a list of installed or available packages run the Yum List command and followed by the package
+
+name.
+
+If you want to search for a particular package, it provides the package name and version, and if it's
+
+an installed package or just an available package to remove and install package, run the yum remove
+
+command followed by the package name and to list all available versions of a package.
+
+Run the Yum List command, but this time with the show duplicates option.
+
+So here we see two versions of packages for Ansible and we can see that each of these are from two separate
+
+repositories.
+
+One is from the extras repository and the other is from the APL repository to install a specific version
+
+of a package.
+
+Run the Yum install command with the package name followed by a hyphen and the version of the package.
+
