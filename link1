@@ -1,2 +1,5 @@
 wget
 curl
+ip link
+ip route
+ip route addr 
