@@ -3,3 +3,4 @@ curl
 ip link
 ip route
 ip route addr 
+route
